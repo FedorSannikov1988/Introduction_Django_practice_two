@@ -37,3 +37,11 @@ class Article(models.Model):
                f'date_publication:{self.date_publication}, ' \
                f'publish: {self.publish}' \
                f')'
+
+
+class Comment(models.Model):
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    article = models.ForeignKey(Article, on_delete=models.CASCADE)
+    comment = models.TextField()
+    date_creation = models.DateField(auto_now_add=True)
+    date_change = models.DateField(auto_now_add=True)
