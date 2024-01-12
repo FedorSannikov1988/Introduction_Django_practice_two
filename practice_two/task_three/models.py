@@ -45,3 +45,11 @@ class Comment(models.Model):
     comment = models.TextField()
     date_creation = models.DateField(auto_now_add=True)
     date_change = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return f'Comment(' \
+               f'author:{self.author}, ' \
+               f'article:{self.article}, ' \
+               f'date creation: {self.date_creation}' \
+               f'date change: {self.date_change}' \
+               f')'
