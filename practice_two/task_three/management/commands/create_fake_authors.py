@@ -11,7 +11,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
 
-        number_fake_author = kwargs['number_fake_author']
+        number_fake_author = kwargs.get('number_fake_author')
 
         for i in range(number_fake_author):
             fake_author = \
